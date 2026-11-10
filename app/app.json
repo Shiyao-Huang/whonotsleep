@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "WhoNotSleep",
+    "slug": "whonotsleep",
+    "scheme": "whonotsleep",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0b0d1a",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.copizza.whonotsleep",
+      "appleTeamId": "UCMS43AMH9",
+      "entitlements": { "com.apple.security.application-groups": ["group.com.copizza.whonotsleep"] }
+    },
+    "android": {
+      "package": "com.copizza.whonotsleep",
+      "adaptiveIcon": {
+        "backgroundColor": "#0b0d1a",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-secure-store",
+      ["expo-build-properties", { "android": { "usesCleartextTraffic": false } }],
+      "@bacons/apple-targets",
+      ["react-native-android-widget", {
+        "widgets": [
+          { "name": "RoomWidget", "label": "WhoNotSleep 房间", "description": "像素小人房间：谁还没睡？",
+            "minWidth": "250dp", "minHeight": "110dp", "targetCellWidth": 4, "targetCellHeight": 2,
+            "resizeMode": "horizontal|vertical", "updatePeriodMillis": 1800000,
+            "previewImage": "./assets/widget-preview.png" },
+          { "name": "MeWidget", "label": "WhoNotSleep 小人", "description": "你的像素小人",
+            "minWidth": "110dp", "minHeight": "110dp", "targetCellWidth": 2, "targetCellHeight": 2,
+            "resizeMode": "horizontal|vertical", "updatePeriodMillis": 1800000,
+            "previewImage": "./assets/widget-preview.png" }
+        ]
+      }]
+    ]
+  }
+}

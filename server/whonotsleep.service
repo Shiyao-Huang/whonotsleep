@@ -1,0 +1,25 @@
+[Unit]
+Description=WhoNotSleep server (谁还没睡)
+After=network.target
+
+[Service]
+Type=simple
+User=wns
+Group=wns
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/whonotsleep/server/data
+ProtectHome=true
+WorkingDirectory=/opt/whonotsleep/server
+ExecStart=/usr/bin/node index.js
+Environment=NODE_ENV=production
+Environment=PORT=3420
+Environment=HOST=127.0.0.1
+EnvironmentFile=-/etc/whonotsleep.env
+Restart=always
+RestartSec=2
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

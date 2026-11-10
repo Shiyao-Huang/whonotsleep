@@ -1,0 +1,10 @@
+{
+  "name": "whonotsleep",
+  "version": "1.0.0",
+  "description": "WhoNotSleep — your AI coding presence as an 8-bit pixel buddy on your friends' phones. Mac CLI: wns",
+  "type": "module",
+  "bin": { "wns": "cli/bin/wns.js" },
+  "files": ["cli/", "shared/protocol.js", "shared/package.json"],
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

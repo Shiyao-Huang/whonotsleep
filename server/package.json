@@ -1,0 +1,17 @@
+{
+  "name": "whonotsleep-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WhoNotSleep (谁还没睡) server: REST + WebSocket + scene.png",
+  "type": "module",
+  "main": "index.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "license": "MIT"
+}

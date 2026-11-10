@@ -30,7 +30,7 @@ wns status
 
 ## 文档 · Docs
 
-- **[邀请朋友 / 下载 APK / AI 一键安装 Prompt](docs/INVITE.md)**
+- **[邀请朋友 / 安装 App / AI 一键安装 Prompt](docs/INVITE.md)**
 - [电脑端后台服务说明 · Mac agent guide](docs/MAC_AGENT.md)（不需要辅助功能/输入监控等任何系统权限）
 - [公共 API · Public API](docs/API.md)
 - [设计 · Design](docs/DESIGN.md)

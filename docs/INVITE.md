@@ -2,7 +2,7 @@
 
 ## 1. 手机装 App
 
-- **Android**：下载 [WhoNotSleep.apk](https://github.com/Shiyao-Huang/whonotsleep/releases/latest/download/WhoNotSleep.apk)，点开安装（第一次会提示「允许安装未知来源应用」，允许即可）。
+- **Android**：找房主要 `WhoNotSleep.apk` 安装包（微信/AirDrop 发过来即可），点开安装（第一次会提示「允许安装未知来源应用」，允许即可）。也可以自己编译：`cd app && npx expo run:android --variant release`。
 - **iPhone**：暂时还没有上架 / TestFlight。会开发的朋友可以克隆仓库后 `cd app && npx expo run:ios --device` 自己装。
 
 ## 2. 进房间

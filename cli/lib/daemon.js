@@ -50,6 +50,7 @@ export async function runDaemon({ verbose = false } = {}) {
   log(`wns daemon started (pid ${process.pid}, node ${process.version})`);
   let cur = null, lastDetectAt = 0, lastKey = null, lastSentAt = 0;
   let failures = 0, nextAllowedAt = 0, warnedNoConfig = false, lastToken = null;
+  let toolMisses = 0; // debounce: a single scan that misses the AI tool must not flip working -> idle
 
   for (;;) {
     try {
@@ -66,8 +67,14 @@ export async function runDaemon({ verbose = false } = {}) {
       const now = Date.now();
       if (!cur || now - lastDetectAt >= DETECT_INTERVAL_MS) {
         try {
-          cur = await detect(cfg);
+          const next = await detect(cfg);
           lastDetectAt = Date.now();
+          if (cur && cur.tool && !next.tool && next.status !== 'away' && toolMisses < 1) {
+            toolMisses++; // keep previous result once; require 2 consecutive misses (~30s) before "stopped"
+          } else {
+            toolMisses = 0;
+            cur = next;
+          }
         } catch (e) { log('detect failed:', e?.message || e); }
       }
       if (cur) {
